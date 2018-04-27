@@ -26,6 +26,7 @@ public class HotSpot {
     public static String webheader="http://s.weibo.com/weibo/";
     public static String doubanheader="https://www.douban.com/";
     public static String toutiaoheader="https://www.toutiao.com/";
+	public static String zhihuheader="https://www.zhihu.com/";
  
     public static String download_page(String url){
         String content=null;
@@ -139,6 +140,29 @@ public class HotSpot {
         	System.out.println(resultArray[index]);
         }
         
+        return resultArray;
+    }
+	public static String[] patter_zh(String tag){
+        String [][] result=new String[20][2];
+        int i=0,j=0;
+       // Pattern pattern = Pattern.compile("<p class=\\\\\"star_name\\\\\">\\\\n  <a target=\\\\\"_blank\\\\\" href=\\\\\"\\\\/weibo\\\\/(.*?)&Refer=top\\\\\"  suda-data=\\\\\"key=tblog_search_list&value=list_realtimehot\\\\\">(.*?)<\\\\/a>\\n  <\\\\/p>");
+        //Pattern pattern = Pattern.compile("<a\\s+href=\"https://www.douban.com/gallery/topic/\\d{3,5}/\\?from_reason=(.*?)&amp;from=gallery_rec_topic\"\\s+target=\"_blank\">[\\s|\\n|\\t|\\r]+<span class=\"topic_name\">[\\s|\\n|\\t|\\r]+<span>(.*?)</span>");
+        Pattern pattern = Pattern.compile("<a\\s+href=\"/roundtable/(.*?)\"\\s+class=\"item-link\"\\s+style=\"background-image:url\\(https://pic\\d{1,1}\\.zhimg\\.com/(.*?)\\.jpg\\)\"><span\\s+class=\"mask\"><span\\s+class=\"mask-fallback\"></span><img\\s+src=\"https://pic\\d{1,1}\\.zhimg\\.com/(.*?)\\.jpg\"\\s+srcset=\"https://pic\\d{1,1}\\.zhimg\\.com/(.*?)\\.jpg\\s+2x\"\\s+alt=\"(.*?)\"");
+
+	
+		Matcher matcher = pattern.matcher(tag);
+        Boolean b=matcher.find();
+        while (matcher.find()) {
+            result[i][j]=StringEscapeUtils.unescapeJava(matcher.group(5));
+            j++;
+            result[i][j]=doubanheader+matcher.group(1);
+            j=0;i++;
+        }
+        String resultArray[] = new String[20];
+        for(int index = 0; index < 20; index ++){
+        	resultArray[index] = result[index][0];
+        	System.out.println(resultArray[index]);
+        }
         return resultArray;
     }
 }
