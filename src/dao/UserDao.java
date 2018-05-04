@@ -55,6 +55,10 @@ public class UserDao {
     	conn.close();
     }
     
+    /**
+     * 修改keywords
+     * @param openid, keywords
+     */
     public void changeKeywords(String openid, String keywords) throws ClassNotFoundException, SQLException{
     	String sql = "update user set keywords= ? where openid= ?";
     	Connection conn = getConn();
@@ -65,7 +69,9 @@ public class UserDao {
     	ps.close();
     	conn.close();
     }
-    
+    /**
+     * 得到用户关注关键词
+     */
     public String getKeywords(String openid) throws ClassNotFoundException, SQLException{
     	String sql = "select keywords from user where openid= ?";
     	Connection conn = getConn();
@@ -79,7 +85,6 @@ public class UserDao {
     	rs.close();
     	ps.close();
     	conn.close();
-    	System.out.println(keywords);
     	return keywords;
     	
     }
