@@ -30,7 +30,7 @@ public class HotSpot {
  
     public static String download_page(String url){
         String content=null;
-        //´´½¨¿Í»§¶Ë
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½
         DefaultHttpClient httpClient=new DefaultHttpClient();
         HttpGet httpGet=new HttpGet(url);
         HttpResponse response;
@@ -42,10 +42,10 @@ public class HotSpot {
                 //EntityUtils.consume(entity);
             }
         } catch (ClientProtocolException e) {
-            // TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+            // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+            // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
             e.printStackTrace();
         }finally {
             httpClient.getConnectionManager().shutdown();
@@ -58,9 +58,9 @@ public class HotSpot {
         try {
             return Jsoup.connect(url).get();
         } catch (IOException e) {
-            // TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+            // TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
             e.printStackTrace();
-            System.out.println("url»òÍøÂçÁ¬½Ó´íÎó");
+            System.out.println("urlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½");
             return null;
         }
     }
@@ -120,7 +120,7 @@ public class HotSpot {
         return resultArray;
     }
     public static String[] patter_tt(String tag){
-    	String [][] result=new String[12][4];
+    	String [][] result=new String[20][4];
         int i=0,j=0;
        // Pattern pattern = Pattern.compile("<p class=\\\\\"star_name\\\\\">\\\\n  <a target=\\\\\"_blank\\\\\" href=\\\\\"\\\\/weibo\\\\/(.*?)&Refer=top\\\\\"  suda-data=\\\\\"key=tblog_search_list&value=list_realtimehot\\\\\">(.*?)<\\\\/a>\\n  <\\\\/p>");
         //Pattern pattern = Pattern.compile("<a target=\\\\\"_blank\\\\\"\\s+href=\\\\\"\\\\/weibo\\\\/(.*?)&Refer=top\\\\\"\\s+suda-data=\\\\\"key=tblog_search_list&value=list_realtimehot\\\\\">(.*?)<\\\\/a>");
@@ -134,8 +134,8 @@ public class HotSpot {
             result[i][j]=toutiaoheader+matcher.group(1);
             j=0;i++;
         }
-        String resultArray[] = new String[12];
-        for(int index = 0; index < 12; index ++){
+        String resultArray[] = new String[20];
+        for(int index = 0; index < 20; index ++){
         	resultArray[index] = result[index][0];
         	System.out.println(resultArray[index]);
         }

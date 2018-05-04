@@ -11,18 +11,18 @@ public class UserDao {
 	public static final String URL = "jdbc:mysql://localhost:3306/yqanalysis?serverTimezone=GMT&useSSL=false";
 	public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	public static final String UNAME = "root";
-	public static final String PASSWORD = "czc948200";
+	public static final String PASSWORD = "123456";
 	
 	/**
-     * µÃµ½Êý¾Ý¿âÁ¬½Ó
+     * ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
      * @throws ClassNotFoundException
      * @throws SQLException
-     * @return Êý¾Ý¿âÁ¬½Ó
+     * @return ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public Connection getConn() throws ClassNotFoundException, SQLException{
-        Class.forName(DRIVER);                                                    //×¢²áÇý¶¯
-        Connection conn = DriverManager.getConnection(URL,UNAME,PASSWORD);        //»ñµÃÊý¾Ý¿âÁ¬½Ó
-        return conn ;                                                            //·µ»ØÁ¬½Ó
+        Class.forName(DRIVER);                                                    //×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        Connection conn = DriverManager.getConnection(URL,UNAME,PASSWORD);        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+        return conn ;                                                            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
     
     public boolean userExists(String openid) throws ClassNotFoundException, SQLException{
@@ -40,7 +40,7 @@ public class UserDao {
     }
     
     /**
-     * ²åÈëÓÃ»§Êý¾Ý
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
      * @throws SQLException 
      * @throws ClassNotFoundException 
      */
