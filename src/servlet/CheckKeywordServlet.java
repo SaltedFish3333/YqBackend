@@ -44,10 +44,7 @@ public class CheckKeywordServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(keyword);
-		System.out.println(keywords);
 		boolean isKeySubscribed = keywords.contains(keyword);
-		System.out.println(isKeySubscribed);
 		PrintWriter out = response.getWriter() ;
 		String responseStr = "{"
 				+ "\"isKeySubscribed\":"+ isKeySubscribed

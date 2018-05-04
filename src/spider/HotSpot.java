@@ -95,7 +95,6 @@ public class HotSpot {
         String resultArray[] = new String[50];
         for(int index = 0; index < 50; index ++){
         	resultArray[index] = result[index][0];
-        	System.out.println(resultArray[index]);
         }
         return resultArray;
     }
@@ -115,7 +114,6 @@ public class HotSpot {
         String resultArray[] = new String[6];
         for(int index = 0; index < 6; index ++){
         	resultArray[index] = result[index][0];
-        	System.out.println(resultArray[index]);
         }
         return resultArray;
     }
@@ -137,7 +135,6 @@ public class HotSpot {
         String resultArray[] = new String[20];
         for(int index = 0; index < 20; index ++){
         	resultArray[index] = result[index][0];
-        	System.out.println(resultArray[index]);
         }
         
         return resultArray;
