@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import model.*;
 
 public class UserDao {
-	public static final String URL = "jdbc:mysql://localhost:3306/yqanalysis?serverTimezone=GMT&useSSL=false";
+	public static final String URL = "jdbc:mysql://localhost:3306/yqanalysis?serverTimezone=GMT&useSSL=false&useUnicode=true&characterEncoding=UTF8";
 	public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	public static final String UNAME = "root";
 	public static final String PASSWORD = "123456";
@@ -56,7 +56,7 @@ public class UserDao {
     }
     
     /**
-     * ÐÞ¸Äkeywords
+     * ï¿½Þ¸ï¿½keywords
      * @param openid, keywords
      */
     public void changeKeywords(String openid, String keywords) throws ClassNotFoundException, SQLException{
@@ -70,7 +70,7 @@ public class UserDao {
     	conn.close();
     }
     /**
-     * µÃµ½ÓÃ»§¹Ø×¢¹Ø¼ü´Ê
+     * ï¿½Ãµï¿½ï¿½Ã»ï¿½ï¿½ï¿½×¢ï¿½Ø¼ï¿½ï¿½ï¿½
      */
     public String getKeywords(String openid) throws ClassNotFoundException, SQLException{
     	String sql = "select keywords from user where openid= ?";

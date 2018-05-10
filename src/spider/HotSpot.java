@@ -99,7 +99,7 @@ public class HotSpot {
         return resultArray;
     }
     public static String[] patter_db(String tag){
-        String [][] result=new String[6][2];
+        String [][] result=new String[5][2];
         int i=0,j=0;
        // Pattern pattern = Pattern.compile("<p class=\\\\\"star_name\\\\\">\\\\n  <a target=\\\\\"_blank\\\\\" href=\\\\\"\\\\/weibo\\\\/(.*?)&Refer=top\\\\\"  suda-data=\\\\\"key=tblog_search_list&value=list_realtimehot\\\\\">(.*?)<\\\\/a>\\n  <\\\\/p>");
         Pattern pattern = Pattern.compile("<a\\s+href=\"https://www.douban.com/gallery/topic/\\d{3,5}/\\?from_reason=(.*?)&amp;from=gallery_rec_topic\"\\s+target=\"_blank\">[\\s|\\n|\\t|\\r]+<span class=\"topic_name\">[\\s|\\n|\\t|\\r]+<span>(.*?)</span>");
@@ -111,8 +111,8 @@ public class HotSpot {
             result[i][j]=doubanheader+matcher.group(1);
             j=0;i++;
         }
-        String resultArray[] = new String[6];
-        for(int index = 0; index < 6; index ++){
+        String resultArray[] = new String[5];
+        for(int index = 0; index < 5; index ++){
         	resultArray[index] = result[index][0];
         }
         return resultArray;

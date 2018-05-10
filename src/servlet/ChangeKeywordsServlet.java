@@ -33,10 +33,14 @@ public class ChangeKeywordsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String openid = request.getParameter("openId").toString();
 		String keyword = request.getParameter("keyword").toString();
+		
+		//keyword=new String(keyword.getBytes("ISO-8859-1"),"UTF-8");
+		
 		Boolean isSubscribed = Boolean.parseBoolean(request.getParameter("isSubscribed").toString());
 		System.out.println(openid+keyword+isSubscribed);
-		response.setContentType("application/json;charset=utf-8");//Ö¸¶¨·µ»ØµÄ¸ñÊ½ÎªJSON¸ñÊ½  
-		response.setCharacterEncoding("UTF-8");//setContentTypeÓësetCharacterEncodingµÄË³Ðò²»ÄÜµ÷»»£¬·ñÔò»¹ÊÇÎÞ·¨½â¾öÖÐÎÄÂÒÂëµÄÎÊÌâ
+		response.setContentType("application/json;charset=utf-8");//Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ¸ï¿½Ê½ÎªJSONï¿½ï¿½Ê½  
+		response.setCharacterEncoding("UTF-8");//setContentTypeï¿½ï¿½setCharacterEncodingï¿½ï¿½Ë³ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		response.getWriter().write(openid+"\n"+keyword);
 		UserDao userDao = new UserDao();
 		try {
 			String keywords = userDao.getKeywords(openid);

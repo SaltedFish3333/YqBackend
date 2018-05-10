@@ -95,6 +95,7 @@ public class POnews extends HttpServlet {
 		String strURL = "https://api.niucodata.com/api/vip/items/?access_token=df6cfe180cc1aae3faabeccccf3a716c705c410e";
 		String params = "{\"keywords\":\"" + URLEncoder.encode(keywords, "UTF-8") + "\",\"scope\":\""
 				+ URLEncoder.encode(scope, "UTF-8") + "\"}";
+		System.out.println(params);
 		try {
 			//jsonResult = getResult(strURL, params,firstFlag);
 			String json = null;

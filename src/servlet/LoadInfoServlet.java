@@ -33,8 +33,8 @@ public class LoadInfoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("application/json;charset=utf-8");//Ö¸¶¨·µ»ØµÄ¸ñÊ½ÎªJSON¸ñÊ½  
-		response.setCharacterEncoding("UTF-8");//setContentTypeÓësetCharacterEncodingµÄË³Ðò²»ÄÜµ÷»»£¬·ñÔò»¹ÊÇÎÞ·¨½â¾öÖÐÎÄÂÒÂëµÄÎÊÌâ
+		response.setContentType("application/json;charset=utf-8");//Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ¸ï¿½Ê½ÎªJSONï¿½ï¿½Ê½  
+		response.setCharacterEncoding("UTF-8");//setContentTypeï¿½ï¿½setCharacterEncodingï¿½ï¿½Ë³ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Document wbpage = HotSpot.get_page("http://s.weibo.com/top/summary?cate=realtimehot");
 		String wbStr = HotSpot.Analysis_page(wbpage,"script");
 		Document dbpage = HotSpot.get_page("https://www.douban.com/gallery/");
@@ -47,6 +47,11 @@ public class LoadInfoServlet extends HttpServlet {
 		String wbkwdStr = getStringFromArray(wbresult);
 		String dbkwdStr = getStringFromArray(dbresult);
 		String ttkwdStr = getStringFromArray(ttresult);
+		
+		wbkwdStr=wbkwdStr.replace("\n", "");
+		dbkwdStr=dbkwdStr.replace("\n", "");
+		ttkwdStr=ttkwdStr.replace("\n", "");
+		
 		PrintWriter out = response.getWriter();
 		out.write("{"
 				+"\"wbkwdStr\": \""+wbkwdStr + "\","

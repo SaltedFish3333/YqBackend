@@ -34,8 +34,11 @@ public class CheckKeywordServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String openid = request.getParameter("openId").toString();
 		String keyword = request.getParameter("keyword").toString();
-		response.setContentType("application/json;charset=utf-8");//指定返回的格式为JSON格式  
-		response.setCharacterEncoding("UTF-8");//setContentType与setCharacterEncoding的顺序不能调换，否则还是无法解决中文乱码的问题
+		
+		//keyword=new String(keyword.getBytes("ISO-8859-1"),"UTF-8");
+		
+		response.setContentType("application/json;charset=utf-8");//指锟斤拷锟斤拷锟截的革拷式为JSON锟斤拷式  
+		response.setCharacterEncoding("UTF-8");//setContentType锟斤拷setCharacterEncoding锟斤拷顺锟斤拷锟杰碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟睫凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 		UserDao userDao = new UserDao();
 		String keywords = "";
 		try {
